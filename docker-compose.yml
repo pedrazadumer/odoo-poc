@@ -1,0 +1,20 @@
+version: "3.8"
+services:
+  odoo-db:
+    build: db
+    container_name: db
+    ports:
+      - "3306:3306"
+    environment:
+      - "POSTGRES_USER=odoo"
+      - "POSTGRES_PASSWORD=odoo"
+      - "POSTGRES_DB=postgres"
+      - "PGDATA=/var/lib/postgresql/data/pgdata"
+  odoo:
+    build: odoo
+    container_name: odoo
+    ports:
+      - "8069:8069"
+      - "8071:8071"
+    depends_on:
+      - odoo-db
