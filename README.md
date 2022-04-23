@@ -1,6 +1,6 @@
-## Prueba de Concepto - XMLRPC ODOO
+# Prueba de Concepto - XMLRPC ODOO
 
-### Configuración Inicial
+## Configuración Inicial
 
 1. Iniciar los contenedores:
 
@@ -26,7 +26,7 @@ $ docker-compose up --build
     - Hacer click en el botón "Action", seleccionar "Change Password" y cambiar la contraseña a "demo" (Usuario: demo, Contraseña: demo).
 
 
-### Detener y Limpiar
+## Detener y Limpiar
 
 1. Para detener los contenedores basta con presionar Ctrl + C
 
