@@ -1,6 +1,7 @@
-package odooconsumerpoc;
+package odooconsumerpoc.impl;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
 public class OdooInfoPrinter {
@@ -18,16 +19,6 @@ public class OdooInfoPrinter {
         System.out.println("============================================\n\n");
     }
 
-    public void printDatabaseInfo(Map<String, Object> databaseInfo) {
-        System.out.println("============================================");
-        System.out.println("             ODOO DATABASE INFO             ");
-        System.out.println("============================================\n\n");
-        System.out.printf("Host: %s\n", databaseInfo.get("host"));
-        System.out.printf("Database: %s\n", databaseInfo.get("database"));
-        System.out.printf("User: %s\n", databaseInfo.get("user"));
-        System.out.println("============================================\n\n");
-    }
-
     public void printUid(int uid) {
         System.out.println("============================================");
         System.out.println("           ODOO AUTHENTICATION UID          ");
@@ -36,17 +27,25 @@ public class OdooInfoPrinter {
         System.out.println("============================================\n\n");
     }
 
-    public void printSale(Map sale){
+    public void printRecordIds(List<Integer> recordIds, String label) {
+        System.out.println("============================================");
+        System.out.printf("                ODOO %s IDs               \n", label.toUpperCase());
+        System.out.println("============================================");
+        System.out.printf("%s Ids: %s\n", label, recordIds);
+        System.out.println("============================================\n\n");
+    }
+
+    public void printSale(Map<String, Object> sale) {
         System.out.println("============================================");
         System.out.printf("        ODOO SALE NUMBER: %s        \n", sale.get("name"));
         System.out.println("============================================");
         System.out.printf("Number: %s\n", sale.get("name"));
         System.out.printf("Creation Date: %s\n", sale.get("create_date"));
-        System.out.printf("Customer: %s\n", ((Object[])sale.get("partner_id"))[1]);
-        System.out.printf("Salesperson: %s\n", ((Object[])sale.get("user_id"))[1]);
+        System.out.printf("Customer: %s\n", ((Object[]) sale.get("partner_id"))[1]);
+        System.out.printf("Salesperson: %s\n", ((Object[]) sale.get("user_id"))[1]);
         System.out.printf("Next Activity: %s\n", sale.get("activity_summary"));
         System.out.printf("Total: %s\n", sale.get("amount_total"));
-        System.out.printf("Currency: %s\n", ((Object[])sale.get("currency_id"))[1]);
+        System.out.printf("Currency: %s\n", ((Object[]) sale.get("currency_id"))[1]);
         System.out.println("============================================\n\n");
     }
 }
