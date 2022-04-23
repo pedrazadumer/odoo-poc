@@ -1,4 +1,4 @@
-# Prueba de Concepto - XMLRPC ODOO
+# Prueba de Concepto | XML-RPC ODOO
 
 ## Configuración Inicial
 
